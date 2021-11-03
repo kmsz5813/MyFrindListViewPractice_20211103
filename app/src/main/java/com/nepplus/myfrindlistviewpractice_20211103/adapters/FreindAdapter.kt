@@ -20,8 +20,12 @@ class FreindAdapter(
         var temRow = convertView
         if (temRow == null){
             temRow = mInflater.inflate(R.layout.friend_list_item, null)
-
         }
+
+        val row = temRow!!
+
+        return  row
+
 
     }
 
