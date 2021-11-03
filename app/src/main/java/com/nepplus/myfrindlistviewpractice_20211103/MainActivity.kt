@@ -39,5 +39,15 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        myFriendsListView.setOnItemLongClickListener { parent, view, position, id ->
+
+            val longClickedFriend = mFriendList[position]
+
+            Toast.makeText(this, "${longClickedFriend}이(가) 길게 눌림", Toast.LENGTH_SHORT).show()
+
+
+            return@setOnItemLongClickListener true
+        }
+
     }
 }
