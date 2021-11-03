@@ -34,6 +34,15 @@ class FreindAdapter(
         val txtAddress = row.findViewById<TextView>(R.id.txtAddress)
 
 
+        txtName.text = data.name
+//        txtAge.text = data.birthYear.toString()
+        txtMale.text = data.isMale.toString()
+        txtAddress.text = data.address
+
+        val age = 2021 - data.birthYear + 1
+        txtAge.text = "(${age}"
+
+
         return  row
 
 
