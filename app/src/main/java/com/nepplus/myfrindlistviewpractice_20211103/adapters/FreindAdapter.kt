@@ -1,10 +1,12 @@
 package com.nepplus.myfrindlistviewpractice_20211103.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.nepplus.myfrindlistviewpractice_20211103.R
 import com.nepplus.myfrindlistviewpractice_20211103.datas.FreindData
 
@@ -23,6 +25,14 @@ class FreindAdapter(
         }
 
         val row = temRow!!
+
+        val data = mList[ position ]
+
+        val txtName = row.findViewById<TextView>(R.id.txtName)
+        val txtAge = row.findViewById<TextView>(R.id.txtAge)
+        val txtMale = row.findViewById<TextView>(R.id.txtMale)
+        val txtAddress = row.findViewById<TextView>(R.id.txtAddress)
+
 
         return  row
 
