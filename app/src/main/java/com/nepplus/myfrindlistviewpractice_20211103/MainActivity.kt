@@ -2,11 +2,14 @@ package com.nepplus.myfrindlistviewpractice_20211103
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.nepplus.myfrindlistviewpractice_20211103.adapters.FreindAdapter
 import com.nepplus.myfrindlistviewpractice_20211103.datas.FreindData
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     val mFriendList = ArrayList<FreindData>()
+    lateinit var mFreindAdapter: FreindAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         mFriendList.add( FreindData("유현식",1998,"서울시 도봉구 쌍문동",true) )
         mFriendList.add( FreindData("김태윤",1990,"서울시 도봉구 쌍문동",true) )
         mFriendList.add( FreindData("조성주",1998,"서울시 도봉구 쌍문동",true) )
+
+        mFreindAdapter = FreindAdapter(this, R.layout.friend_list_item, mFriendList)
+        myFriendsListView.adapter = mFreindAdapter
 
     }
 }
