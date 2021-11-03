@@ -1,5 +1,6 @@
 package com.nepplus.myfrindlistviewpractice_20211103
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -35,7 +36,11 @@ class MainActivity : AppCompatActivity() {
             
             val clickedFrirend = mFriendList[position]
 
-            Toast.makeText(this, "${clickedFrirend.name}이(가) 클릭됨", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "${clickedFrirend.name}이(가) 클릭됨", Toast.LENGTH_SHORT).show()
+
+            val myIntent = Intent(this,ViewFriendActivity::class.java)
+            myIntent.putExtra("name", clickedFrirend)
+            startActivity(myIntent)
 
         }
 
