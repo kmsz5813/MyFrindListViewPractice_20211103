@@ -2,6 +2,8 @@ package com.nepplus.myfrindlistviewpractice_20211103
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import com.nepplus.myfrindlistviewpractice_20211103.adapters.FreindAdapter
 import com.nepplus.myfrindlistviewpractice_20211103.datas.FreindData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,6 +28,16 @@ class MainActivity : AppCompatActivity() {
 
         mFreindAdapter = FreindAdapter(this, R.layout.friend_list_item, mFriendList)
         myFriendsListView.adapter = mFreindAdapter
+
+        myFriendsListView.setOnItemClickListener { parent, view, position, id ->
+
+            Log.d("리스트뷰클릭","${position}번 줄 클릭됨")
+            
+            val clickedFrirend = mFriendList[position]
+
+            Toast.makeText(this, "${clickedFrirend.name}이(가) 클릭됨", Toast.LENGTH_SHORT).show()
+
+        }
 
     }
 }
